@@ -2,4 +2,56 @@
 
 \chapter{Data preparation}
 
+Data preparation is the phase concerned with constructing the final dataset, including record and attribute selection, data cleaning, construction of new attributes and transformation of data for modeling tools \cite{wirth2000crisp}. In the context of this work, several data preparation tasks were performed.
+
+\section{Adding new attributes}
+
+For further analysis requirements, several new attributes had to be added. None of the attributes are complex and are relatively fast to add in one pass through of the data.
+
+Inter-position distance, the distance between two points in metres, is calculated using the Geodesic formula. inter-position distance (Geodesic formula)
+
+Time difference is calculated by subtracting the two timestamps of the measurement time.
+
+Average speed is calculated as the inter-position distance divided by time difference.
+
+Bearing angle is calculated using the (which?) formula.
+
+\section{Outlier detection}
+
+Outlier is an observation that appears to deviate markedly from other members of the sample in which it occurs \cite{doi:10.1080/00401706.1969.10490657}. Outliers can be of many types, but in the context of this work, measurement errors are the most concering type, since not all methods are resilient towards them.
+
+Measurement errors are inherent to the problem area; small IoT devices are heavily energy-constrainted and animal movements are very time sensitive, therefore there might not be enough time for the device to detect the error or take another data sample.. Global positioning systems usually come with several meters of inprecision from the actual position of the receiver, but these inprecisions may become exaggerated in areas with poor reception or radio-reflective surfaces.
+
+For example, earlier GNSS-based tracking systems used roughly over 40\% of their energy on getting GPS positions and had an average precision of 15 meters in open-air conditions \cite{jain2008wildcense}
+
+The resulting deviations may be in tens of metres to several kilometers between two relatively close positions in cities or dense forests, for example.
+
+There are many types of errors with varying levels of difficulty for automatic detection; while all of the errors are obvious to an expert, making an algorithm for all of them proved difficult.
+
+\subsubsection{Speed-based position error detection}
+
+In the context of animal movements, a valid upper bound for movement speed can be specified with reasonable level of certainness. Most birds, apart from short periods of hunting, do not usually exceed the speeds of (?source?), and it can be reasonably assumed that the upper limit for speed should be (x). (consult with Dušan)
+
+\subsubsection{Angle-based position error detection}
+
+
+
+
+
+\section{Attribute selection}
+
 data cleansing - normalisation, outlier detection (rules), interpolation, ordering, simplification?
+
+\section{Data labeling}
+
+Due to the intended results of the analysis process, precise and quickly interpretable result requirements, labeling of the data is a necessity. Therefore, a data labeling module was added to the Anitra animal tracking application for expert classification. Datasets will be enriched with data labels for each specific model. However, classic unsupervised learning algorithms such as k-means are not 
+
+\section{Data splitting}
+
+For further sub-analysis, each dataset can be split into transfer and static states. Transfer state is assigned to the time the animal is moving between two specific locations, static state describes any other position. Transfer states can be further analysed to discover foraging or nest-building activity, and static states can be further analysed to discover mortality states, nesting states or night roosts.
+
+\subsubsection{K-means activity classification}
+
+In previous research, \citeauthor{schwager2007robust} demonstrated that the well-known K-means unsupervised classification algorithm can be used to classify tracking data into various categories, in their study they demonstrated a capability of classifying data into two clusters based on activity (or lack thereof). Using speed, horizontal head angle and vertical head angle, they were able to produce animal-independent uniform clusters for determining animal activity and inactivity states. Unfortunately for more general applications, head angles may be impossible to determine. Loggers may be placed on other parts of the animal that may make it impossible to determine these angles (such as on the back or on the leg), or may rotated in various different ways. This may create inconsistent clustering not only between different animals, but between different loggers.
+
+(try this with other attributes)
