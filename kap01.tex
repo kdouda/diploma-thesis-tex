@@ -10,22 +10,29 @@ Complexity of these telemetry devices varies greatly, from simple radio tags use
 
 For most of the history of modern zoology, animal tracking was on the sidelines of interest due to technological limitations of its time. Early radio-based tracking devices (tags) suffered from many issues, such as restrictive weight, complicated data acquisition requiring near-direct observation of the animal or lack of accuracy \cite{kays2015terrestrial}.
 
-These simple radio tags were prevalent until the advent of the satellite-based Argos system (cite), which finally allowed acquiring location data from animals at greater distances. Position data was extrapolated from the signal emitted by the Argos sattelites using a doppler-shift based method, which resulted in its main disadvantage, longitudinal inaccuracy. Early Argos tags were also unsuitable for small animals. Argos remains today as the only viable option for marine life or animals living in very remote areas, such as the Arctic. (verify all of this, your internet is down dummy)
+These simple radio tags were prevalent until the advent of the satellite-based Argos system in 1980 \cite{douglas2012moderating}, which finally allowed acquiring location data from animals at greater distances. Position data was extrapolated from the signal emitted by the Argos sattelites using a doppler-shift based method, which resulted in its main disadvantage, position inaccuracy, which has to be compensated for by sophisticated algorithms, which reduce data volume \cite{douglas2012moderating}. Early Argos tags were also unsuitable for small animals. Argos remains today as the only viable option for marine life or animals living in very remote areas, such as the Arctic.
 
-Spread of the worldwide GSM network, along with further advances in electronics and microprocessors, more precise GPS positioning, lightweight batteries and compact solar panels brought on the reneissance of animal telemetry, allowing it to be used for medium-sized vertebreates \cite{kays2015terrestrial}. Wildlife conservation experts may now enjoy nearly instantaneous knowledge of the animal' location or life state, allowing them to, for example, quickly respond to possible mortality cases or to locate nests. 
+Spread of the worldwide GSM network, along with further advances in electronics and microprocessors, more precise GPS positioning, lightweight batteries and compact solar panels brought on the reneissance of animal telemetry, allowing it to be used for medium-sized vertebreates \cite{kays2015terrestrial}. Wildlife conservation experts may now enjoy nearly instantaneous knowledge of the animal' location or life state, allowing them to, for example, quickly respond to possible mortality cases or to locate nests, animal aggregation places, wintering locations for migratory animals... 
 
 %add some examples of animal tracking usage
 
 Today, animal tracking suffers from the opposite problem of having too much data to work with. Studies may deal with tens of millions of positions and their associated metrics, which makes human analysis of these very impractical. Due to this, various methods and analysis tools were developed or adopted for animal tracking. Some of these methods are elaborated upon in the following chapters. and sections.
 
-\section{Geospatial data}
-
-define geospatial data, precision problems, put it into context of animal tracking
-
 \section{Timeseries data}
 
 define timeseries, problems with existing methods for this problem (non-continuous sampling), possible solutions
 
+\section{Geospatial data}
+
+Geospatial data is a subtype of data where each data point is assigned a georeferenced position, usually with latitude and longitude. Sometimes, these data can be also enriched with time information, making the data sequential. For the purpose of this thesis, all geospatial data are associated with time, since animal tracks are sequential. Methods of multivariate time series analysis are thus suitable for animal tracking problems.
+
+Substantial research has been done on various machine learning algorithms for analysis of spatial data. According to \citeauthor{kanevski2008machine}, typical geospatial data problems include: spatial predictions and interpolation, modelling with uncertainities, multivariate joint predictions of several variables, risk mapping, modelling of spatial variability and uncertainty, optimisation of monitoring networks, space filtering models, machine learning, data mining in high dimensional geo-feature space. It should be noted that most of these methods listed in the previous enumeration are unsupervised, possibly yielding results with difficult interpretation.
+
+Geospatial data, especially in the context of IoT, can be met with further challenges, such as measurement errors, varying data frequencies and data delays. 
 
 \section{Previous research}
+
+In the context of animal tracking, there have been various efforts for processing data. These methods may involve identifying errors in the dataset, classifying animal behaviour, interpolating data.
+
+% doplnit víc cílů metod, doplnit co jsem našel
 
