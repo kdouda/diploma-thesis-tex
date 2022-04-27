@@ -2,9 +2,21 @@
 
 \chapter{Problem context}
 
-\section{Animal tracking}
+\section{Animal telemetry}
 
-define animal tracking, brief history, problems, communication flow / time delays
+Animal telemetry is the study of animal lifecycles utilizing remotely sensing equipment. In practice, this involves attaching an electronic device capable of recording desired metrics, primarily location. Other metrics may include bodily temperature, accelerometers, magnetometers and many more. Frequencies of these measurement can be either fixed or varying, depending on the device or its programming. Usually, these metrics are stored on the device and either retrieved manually by recapturing the animal, or the device has a capability to send the data to its intended recipient, usually with an associated time delay.
+
+Complexity of these telemetry devices varies greatly, from simple radio tags used to simply locate an animal, to complex GPS loggers with various sensors and the capability to quickly transmit data to a remote server for nearly immedieate display of the animal's location to the end user. However, it was not always as such, and as any field it has gone through its evolution.
+
+For most of the history of modern zoology, animal tracking was on the sidelines of interest due to technological limitations of its time. Early radio-based tracking devices (tags) suffered from many issues, such as restrictive weight, complicated data acquisition requiring near-direct observation of the animal or lack of accuracy \cite{kays2015terrestrial}.
+
+These simple radio tags were prevalent until the advent of the satellite-based Argos system (cite), which finally allowed acquiring location data from animals at greater distances. Position data was extrapolated from the signal emitted by the Argos sattelites using a doppler-shift based method, which resulted in its main disadvantage, longitudinal inaccuracy. Early Argos tags were also unsuitable for small animals. Argos remains today as the only viable option for marine life or animals living in very remote areas, such as the Arctic. (verify all of this, your internet is down dummy)
+
+Spread of the worldwide GSM network, along with further advances in electronics and microprocessors, more precise GPS positioning, lightweight batteries and compact solar panels brought on the reneissance of animal telemetry, allowing it to be used for medium-sized vertebreates \cite{kays2015terrestrial}. Wildlife conservation experts may now enjoy nearly instantaneous knowledge of the animal' location or life state, allowing them to, for example, quickly respond to possible mortality cases or to locate nests. 
+
+%add some examples of animal tracking usage
+
+Today, animal tracking suffers from the opposite problem of having too much data to work with. Studies may deal with tens of millions of positions and their associated metrics, which makes human analysis of these very impractical. Due to this, various methods and analysis tools were developed or adopted for animal tracking. Some of these methods are elaborated upon in the following chapters. and sections.
 
 \section{Geospatial data}
 
