@@ -2,38 +2,23 @@
 
 \chapter{Data understanding}
 
-describe data sources, available columns, data ingestion
+% definuj co je data understanding podle CRISP-DM
+
+In this chapter, data sourcing, description and availability will be provided.
+
+% describe data sources, available columns, data ingestion
 
 \subsection{Provenance}
 
-\subsection{Data description}
+Data provenance is the description of origin of data. Data for this diploma thesis will come from two independent sources, but they share many common characteristics.
 
-0   datetime           224466 non-null  object
-1   gnss\_latitude      224466 non-null  object
-2   gnss\_longitude     224466 non-null  object
-3   gnss\_altitude\_m    224466 non-null  object
-4   gnss\_speed\_kmh     224466 non-null  object
-5   gnss\_direction     224466 non-null  object
-6   battery\_mv         224466 non-null  object
-7   battery\_pct        224466 non-null  object
-8   solar\_pct          224466 non-null  object
-9   temperature\_c      224466 non-null  object
-10  baro\_pressure\_hpa  224466 non-null  object
-11  baro\_altitude\_m    224466 non-null  object
-12  roll               4 non-null       object
-13  pitch              4 non-null       object
-14  device\_id          224466 non-null  object
-15  device\_code        224466 non-null  object
-16  device\_alias       4 non-null       object
-17  tracking\_id        224453 non-null  object
-18  animal\_id          224453 non-null  object
-19  animal\_code        224453 non-null  object
-20  animal\_name        4 non-null       object
-21  wrong\_gps          224466 non-null  object
-22  note               4 non-null       object
-23  acc\_raw\_x          4 non-null       object
-24  acc\_raw\_y          4 non-null       object
-25  acc\_raw\_z          4 non-null       object
+The first data source is Movebank, a project of the Max Planck institute in Germany, which collects geolocated animal tracking data from various device manufacturers and operators. Out of the box, the platform supports data visualisation, device and animal metadata management, project collaboration and data archival. The Movebank ecosystem has many community-built tools for data analysis, classification, visualisation and error detection. A drawback of the platform is the mandatory data publishing requirement, which may not be acceptable for some use cases. The Movebank platform's website can be found at \url{https://www.movebank.org}. The platform provides a public API, which allows data exports for analysis. The API will be one of the data sources used in the modeling and analysis. The Movebank data format is widely used and supported by various tools, and the naming conventions for metrics in this thesis will be taken from the Movebank data model. % cite the movebank data model
+
+The second data source is the Anitra platform, which shares many features of the Movebank ecosystem, but expands on the data management and does not require data sharing to the wider public. Anitra is also the first destination for the data from the Anitra devices and provides some additional metrics. The platform supports data exporting in the same format used by the Movebank platform. Data licensing for this platform will be elaborated upon later, but unlike Movebank, the data is not released under a permissive license. The author of this thesis has access to the full Anitra platform dataset, but only data with explicit permission of the owner will be used.
+
+Satellite-collected datasets such as snow cover, cloud cover, satellite imagery, land use and elevation data can be used to enrich data and create more advanced ecological analyses. Local temperature, pressure and precipitation can be used to provide some other data to explain animal behaviour.
+
+\subsection{Data description}
 
 gnss datetime, latitude, longitude, temperature
 
