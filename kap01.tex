@@ -18,9 +18,13 @@ Spread of the worldwide GSM network, along with further advances in electronics 
 
 Today, animal tracking suffers from the opposite problem of having too much data to work with. Studies may deal with tens of millions of positions and their associated metrics, which makes human analysis of these very impractical. Due to this, various methods and analysis tools were developed or adopted for animal tracking. Some of these methods are elaborated upon in the following chapters. and sections.
 
-\section{Timeseries data}
+\section{Time series data}
 
-define timeseries, problems with existing methods for this problem (non-continuous sampling), possible solutions
+Time series is defined as \emph{a set of observations arranged chronologically} \cite{parzen1961approach}. Usually the field of time series analysis is concerned with consistently samped time series data with one variable, such as economic statistics collected annually, however there are methods in data preprocessing that are capable of normalizing the data or methods using the data directly.
+
+Sequence analysis methods on multivariate time series are a possible approach for data analysis. Sequence analysis methods include Hidden Markov models, LSTM neural networks, cSPADE algorithm and more. All these methods listed work best with evenly spaced data in time series, so data interpolation and subsetting will have to be utilized. % cite this 
+
+Hidden Markov models have already been sucessfully applied to the animal telemetry analysis context, which is described in section \ref{previous-researc-section}.
 
 \section{Geospatial data}
 
@@ -28,11 +32,20 @@ Geospatial data is a subtype of data where each data point is assigned a georefe
 
 Substantial research has been done on various machine learning algorithms for analysis of spatial data. According to \citeauthor{kanevski2008machine}, typical geospatial data problems include: spatial predictions and interpolation, modelling with uncertainities, multivariate joint predictions of several variables, risk mapping, modelling of spatial variability and uncertainty, optimisation of monitoring networks, space filtering models, machine learning, data mining in high dimensional geo-feature space. It should be noted that most of these methods listed in the previous enumeration are unsupervised, possibly yielding results with difficult interpretation.
 
-Geospatial data, especially in the context of IoT, can be met with further challenges, such as measurement errors, varying data frequencies and data delays. 
+Geospatial data, especially in the context of IoT, can be met with further challenges, such as measurement errors, varying data frequencies and data delays.
+
+Methods used for geospatial data analysis and classification include kernel-based (soft) clustering, DBSCAN or Optics clustering. Geospatial data interpretations also provides hints for errorneous positions, such as uncharacteristicly shaped angles between two locations, impossible speeds, etc.
 
 \section{Previous research}
+\label{previous-researc-section}
 
 In the context of animal tracking, there have been various efforts for processing data. These methods may involve identifying errors in the dataset, classifying animal behaviour, interpolating data.
+
+\citeauthor{gupte2022guide} provided a guide (or more specifically, a methodology and software) for preprocessing high frequency animal telemetry data with an emphasis on lowering position errors. \citeauthor{fleming2021comprehensive} used strong statistical background for error analysis, creating several recommended models and testing them on various telemetry devices. \citeauthor{douglas2012moderating} provide methods for handling very imprecise Argos data and extracting the most likely positions out of them using various methods, including relatively simple rules.
+
+\citeauthor{langrock2012flexible} explain and use extensions of hidden Markov models in the context of animal telemetry processing of bisons, classifying data into stationary and moving states. \citeauthor{leos2017multi} explore hierarchical hidden Markov models in the context of animal tracking, incorporating various HMMs at different time scales. \citeauthor{michelot2016movehmm} created the R package moveHMM for the wider animal telemetry community. \citeauthor{wijeyakulasuriya2020machine} propose and test various methods (including random forests and long-short term memory neural networks) for prediction of animal positions. \citeauthor{jeantet2021fully} use convolutional neural networks for 1D classification of behaviour of juvenile turtles.
+
+
 
 % doplnit víc cílů metod, doplnit co jsem našel
 

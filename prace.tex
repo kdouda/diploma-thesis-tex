@@ -1,12 +1,12 @@
 %%% Verze pro jednostranný tisk:
-%\documentclass[11pt,a4paper]{report}
-%\usepackage[top=25mm,bottom=25mm,right=25mm,left=30mm,head=12.5mm,foot=12.5mm]{geometry}
-%\let\openright=\clearpage
+\documentclass[11pt,a4paper]{report}
+\usepackage[top=25mm,bottom=25mm,right=25mm,left=30mm,head=12.5mm,foot=12.5mm]{geometry}
+\let\openright=\clearpage
 
 %%% Pokud tiskneme oboustranně:
-\documentclass[11pt,a4paper,twoside,openright]{report}
-\usepackage[top=25mm,bottom=25mm,right=25mm,left=30mm,head=12.5mm,foot=12.5mm]{geometry}
-\let\openright=\cleardoublepage
+%\documentclass[11pt,a4paper,twoside,openright]{report}
+%\usepackage[top=25mm,bottom=25mm,right=25mm,left=30mm,head=12.5mm,foot=12.5mm]{geometry}
+%\let\openright=\cleardoublepage
 
 %%% Definice různých užitečných maker (viz popis uvnitř souboru)
 \input{makra}
@@ -86,31 +86,33 @@
 
 %%% Seznam obrázků v práci
 %%% List of figures in the thesis
-\openright
-\listoffigures
+%\openright
+%\listoffigures
 
 %%% Seznam tabulek v práci (volitelně)
 %%% List of tables in the thesis (optionally)
-\clearpage
-\listoftables
+%\clearpage
+%\listoftables
 
 %%% Seznam zkratek v práci (volitelně)
 %%% List of abbreviations in the thesis (optionally)
-\include{zkratky}
+%\include{zkratky}
 
 \pagestyle{fancy}
 %%% Jednotlivé kapitoly práce jsou pro přehlednost uloženy v samostatných souborech
 %%% The individual chapters of the thesis are stored in separate files for clarity
 \include{uvod}
 \include{kap01}
-\include{kap02}
-\include{kap03}
-\include{kap04}
-\include{kap05}
-\include{kap06}
+\include{progress}
+\include{metody}
+%\include{kap02}
+%\include{kap03}
+%\include{kap04}
+%\include{kap05}
+%\include{kap06}
 % \include{...}
 % \include{...}
-\include{zaver}
+%\include{zaver}
 
 %%% Seznam použité literatury
 %%% Bibliography
@@ -120,10 +122,10 @@
 %%% odkazována z vlastního textu práce. Přílohy se číslují.
 %%% Attachments to thesis, if any. Each attachment must be referenced at 
 %%% least once in your own text. The appendices are numbered.
-\part*{\Prilohy}
-\appendix
-\include{app01}
-\include{app02}
+%\part*{\Prilohy}
+%\appendix
+%\include{app01}
+%\include{app02}
 % \include{...}
 % \include{...}
 
